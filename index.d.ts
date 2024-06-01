@@ -14,6 +14,7 @@ declare global {
     export type Work = {
       name: string;
       url: string;
+      slug: string;
     };
   }
 }
