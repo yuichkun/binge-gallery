@@ -2,7 +2,7 @@
 import "@google/model-viewer";
 import Link from "next/link";
 
-export function Preview({ work }: { work: App.Work }) {
+export default function Preview({ work }: { work: App.Work }) {
   return (
     <div className="">
       <Link className="relative" href={`/works/${work.slug}`}>

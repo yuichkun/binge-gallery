@@ -1,5 +1,9 @@
 import { WORKS } from "@/constants";
-import { Preview } from "./components/Preview";
+import dynamic from "next/dynamic";
+
+const DynamicPreview = dynamic(() => import("./components/Preview"), {
+  ssr: false,
+});
 
 export default function Home() {
   const gradient = "bg-gradient-to-bl from-slate-900 to-slate-700";
@@ -12,7 +16,7 @@ export default function Home() {
       <ul className="flex flex-wrap justify-between mt-16">
         {WORKS.map((work) => (
           <li key={work.slug} className="md:w-1/3 w-full">
-            <Preview work={work} />
+            <DynamicPreview work={work} />
           </li>
         ))}
       </ul>
