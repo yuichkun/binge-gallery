@@ -14,6 +14,7 @@ export function Gallery({ name, url }: Props) {
         src={url}
         alt="A 3D model of an astronaut"
         auto-rotate
+        autoplay
         camera-controls
       ></model-viewer>
     </div>

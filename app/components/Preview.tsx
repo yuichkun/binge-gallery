@@ -3,6 +3,7 @@ import "@google/model-viewer";
 import Link from "next/link";
 
 export default function Preview({ work }: { work: App.Work }) {
+  const speed = getRandomRange(1000, 2000);
   return (
     <div className="">
       <Link className="relative" href={`/works/${work.slug}`}>
@@ -16,11 +17,16 @@ export default function Preview({ work }: { work: App.Work }) {
             width: "100%",
           }}
           src={work.url}
+          autoplay
           auto-rotate
-          rotation-per-second="2000%"
+          rotation-per-second={`${speed}%`}
           auto-rotate-delay={0}
         />
       </Link>
     </div>
   );
+}
+
+function getRandomRange(min: number, max: number) {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
 }
