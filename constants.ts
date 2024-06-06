@@ -1,4 +1,9 @@
 const _WORKS = [
+  {
+    name: "Dancing Murasaki",
+    url: "/dancing_murasaki.glb",
+    slug: "dancing-murasaki",
+  },
   // tmp
   {
     name: "Astronaut",
